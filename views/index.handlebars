@@ -5,6 +5,7 @@
 	<head>
 		<title>My HCI Friends</title>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width-device-width, initial-scale=1.0">
 
 		<script src="js/jquery-1.11.0.js"></script>
 		<script src="js/bootstrap.js"></script>
@@ -18,14 +19,25 @@
 
 	<body>
 		<h1>My HCI Friends</h1>
-		<div>
+		{{#each friends}}
+			<div class="friend">
+				<img src="{{imageURL}}" alt="Lorem Pixel image" class="img-responsive">
+				<h3 class="friendName"><a href="#">{{name}}</a></h3>
+				<!-- <a href="#">
+					<h3 id="friendName">{{name}}</h3>
+				</a> -->
+				<small>{{description}}</small>
+			</div>
+			<hr>
+		{{/each}}
+		<!-- <div>
 			<img src="http://lorempixel.com/500/500/people" alt="Lorem Pixel image" class="img">
 			<h3>Rachel</h3>
 			<small>This is for Rachel you big fat white nasty smelling fat bitch why you took me off the motherfucking
 				schedule with your trifflin' dirty white racist ass big fat oompa loompa body ass bitch. I'm coming up
 				there and I'm gonna beat the fuck out of you bitch and don't even call the police today
 			</small>
-		</div>
+		</div> -->
 		<form id="addFriendForm" role="form" method="get" action="/add">
 			<h3>Add a friend</h3>
 		    <div class="form-group">
